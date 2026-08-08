@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             // Número de WhatsApp de la clínica
-            const whatsappNumber = "51910782436";
+            const whatsappNumber = "51978300924";
 
             // Obtener valores de los campos
             const name = document.getElementById('userName').value.trim();
