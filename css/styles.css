@@ -13,10 +13,13 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     background: #f8fafc;
     color: #334155;
     line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
 }
 
 img {
@@ -32,7 +35,31 @@ a {
 button {
     font: inherit;
 }
+/* =========================================================
+   FUENTES LOCALES
+========================================================= */
 
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap; /* Evita que el texto sea invisible mientras carga */
+    src: url('../assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('ttf');
+}
 
 /* =========================================================
    VARIABLES
@@ -55,6 +82,9 @@ button {
 
     --radius: 16px;
     --transition: 0.3s ease;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
 }
 
 
