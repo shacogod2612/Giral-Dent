@@ -921,19 +921,73 @@ button {
 
 
 /* =========================================================
-   TABLET
+   TABLET Y MÓVIL (Desde 1050px hacia abajo)
 ========================================================= */
 
 @media (max-width: 1050px) {
 
+    /* Ocultar datos de contacto de la barra superior */
     .nav-contact {
         display: none;
     }
 
-    .nav-menu {
+    /* Activar el botón hamburguesa */
+    .menu-toggle {
+        display: block; 
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--dark);
+        cursor: pointer;
+        padding: 0.5rem;
         margin-left: auto;
     }
 
+    /* Convertir el menú en desplegable */
+    .nav-menu {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+       
+    }
+
+    /* Estado activo inyectado por JS */
+    .nav-menu.active {
+        display: flex !important;
+
+    }
+
+    .nav-menu a {
+       padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+    .nav-menu.active a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-menu a::after {
+        display: none;
+    }
+
+    /* Ajustes generales del layout */
     .hero-container {
         gap: 2.5rem;
     }
@@ -949,7 +1003,7 @@ button {
 
 
 /* =========================================================
-   TABLET / MOBILE
+   MÓVIL (768px hacia abajo)
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -963,9 +1017,7 @@ button {
         font-size: 2rem;
     }
 
-
-    /* NAVBAR */
-
+    /* NAVBAR AJUSTES MÓVIL */
     .nav-container {
         min-height: 70px;
     }
@@ -974,59 +1026,13 @@ button {
         width: 150px;
     }
 
-    .nav-menu {
-        position: absolute;
-
-        top: 70px;
-        left: 0;
-        right: 0;
-
-        display: none;
-        flex-direction: column;
-
-        align-items: stretch;
-
-        padding: 1rem 1.5rem;
-
-        background: var(--white);
-
-        border-bottom: 1px solid var(--border);
-
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu a {
-        padding: 0.75rem 0;
-
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-menu a:last-child {
-        border-bottom: none;
-    }
-
-    .nav-menu a::after {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-
     /* HERO */
-
     .hero {
         min-height: auto;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
-
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
@@ -1047,26 +1053,15 @@ button {
         height: 400px;
     }
 
-
-    /* FEATURES */
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* TREATMENTS */
-
+    /* FEATURES & TREATMENTS */
+    .features-grid,
     .treatments-grid {
         grid-template-columns: 1fr;
     }
 
-
     /* DOCTOR */
-
     .doctor-container {
         grid-template-columns: 1fr;
-
         gap: 3rem;
     }
 
@@ -1078,77 +1073,9 @@ button {
         font-size: 2.5rem;
     }
 
-
     /* CTA */
-
     .cta-container {
         flex-direction: column;
-
         align-items: flex-start;
     }
-
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .section {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .hero-container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.25rem;
-    }
-
-    .hero-content > p {
-        font-size: 1rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
-
-    .hero-trust {
-        flex-direction: column;
-        gap: 0.7rem;
-    }
-
-    .hero-image-card img {
-        height: 330px;
-    }
-
-    .hero-image-info {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-    }
-
-    .treatment-card {
-        flex-direction: column;
-    }
-
-    .doctor-image img {
-        height: 350px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-}
-
