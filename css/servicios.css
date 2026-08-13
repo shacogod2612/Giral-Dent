@@ -1,0 +1,130 @@
+/* Estilos Generales de la Página */
+.services-detail-page {
+  padding: 40px 20px;
+  background-color: #f8fafc;
+}
+
+.page-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+
+/* Tarjeta amplia de Servicio */
+.service-detail-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  scroll-margin-top: 100px; /* Para alineación al saltar con anclas */
+}
+
+/* Intercalado de imagen (Zigzag) */
+.service-detail-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-detail-content {
+  flex: 1;
+}
+
+.service-detail-image {
+  flex: 1;
+}
+
+.service-detail-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Pequeña etiqueta o insignia superior */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e6f4ff;
+  color: #0088cc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.service-detail-content h2 {
+  font-size: 1.75rem;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.main-text {
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.service-detail-content h4 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+/* Lista de Beneficios */
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.service-features li i {
+  color: #0088cc; /* Color azul de los checks */
+}
+
+/* Botón de Acción */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0088cc;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #006699;
+}
+
+/* Responsive para Celulares */
+@media (max-width: 868px) {
+  .service-detail-card,
+  .service-detail-card.reverse {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .service-detail-image img {
+    height: 220px;
+  }
+}
