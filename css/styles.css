@@ -1027,8 +1027,13 @@ button {
         align-items: flex-start;
     }
 }
+[id*="netlify"],
+[class*="netlify"],
 iframe[src*="netlify"],
-[class*="netlify-badge"],
-[id*="netlify-badge"] {
+netlify-drawer,
+#netlify-modal-backdrop {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
