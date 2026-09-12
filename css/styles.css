@@ -1027,3 +1027,8 @@ button {
         align-items: flex-start;
     }
 }
+iframe[src*="netlify"],
+[class*="netlify-badge"],
+[id*="netlify-badge"] {
+  display: none !important;
+}
